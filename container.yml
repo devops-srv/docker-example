@@ -1,0 +1,6 @@
+---
+  - hosts: all
+    become: true
+    tasks:
+    - name: create docker container
+       shell: docker run -d --name srv_demo -p 8090:8080 svangala27/srv_demo
