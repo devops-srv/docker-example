@@ -6,8 +6,8 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami           = "ami-0dd005d3eb03f66e8"
   instance_type = "t2.micro"
-  key_name      = "devops-training"
-  vpc_security_group_ids = ["sg-0b7e9dfb514f5b22c"]
+  key_name      = "Key name"
+  vpc_security_group_ids = ["security group ID"]
   user_data = <<-EOF
               #!/bin/bash
               echo "welcome to DevOps session!!!" > index.html
