@@ -1,5 +1,5 @@
 ---
-  - hosts: test
+  - hosts: all
     become: true
     tasks:
      - name: stop previous version docker
