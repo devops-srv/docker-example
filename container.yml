@@ -1,8 +1,13 @@
---- 
-- 
-  become: true
-  hosts: all
-  tasks: 
-    - 
-      name: "create docker container"
-      shell: "docker run -d --name srv_demo -p 8090:8080 svangala27/srv_demo"
+---
+  - hosts: test
+    become: true
+    tasks:
+     - name: stop previous version docker
+       shell: docker stop srv_demo
+     - name: remove stopped container
+       shell: docker rm -f srv_demo	  
+     - name: remove docker images
+       shell: docker image rm -f svangala27/srv_demo
+       
+     - name: create docker image
+       shell: docker run -d --name srv_demo -p 8090:8080 svangala27/srv_demo
