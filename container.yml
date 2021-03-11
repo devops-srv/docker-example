@@ -5,4 +5,4 @@
   tasks: 
     - 
       name: "create docker container"
-      shell: "docker run -d --name srv_demo -p 8090:8080 svangala27/srv_demo"
+      shell: "docker run -d --name jon -p 1234:8080 ponraj0204/jon"
