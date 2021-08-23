@@ -3,6 +3,9 @@
   become: true
   hosts: all
   tasks: 
-    - 
+    - name: "Stop container"
+      shell: "docker stop jon"
+      name: "Delete container"
+      shell: "docker rm jon"
       name: "create docker container"
       shell: "docker run -d --name jon -p 1234:8080 ponraj0204/jon"
